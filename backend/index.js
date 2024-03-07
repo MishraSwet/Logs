@@ -1,9 +1,11 @@
-const app = require("express");
+const express = require("express");
+const app = express();
+const cors = require("cors");
 
-app.use("cors()");
-app.use("express.json()");
+app.use(cors());
+app.use(express.json());
 app.get("/", (req, res) => {
-    res.text("Hello World")
+    res.send("Hello World")
 })
 
-app.listen(3000);
+app.listen(3000,()=>{`Server Running at port 3000`});
